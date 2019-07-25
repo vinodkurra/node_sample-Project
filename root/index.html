@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="ChotbotApp" id="script">
+
+<head>
+
+        <head>
+                <base href="/" />
+        </head>
+        <link href="root/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="root/css/toaster.css">
+
+        <!--controllers-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+        <script src="root/js/toaster.js"></script>
+
+        <script src="root/controllers/mainController.js"></script>
+        <script src="root/services/service.js"></script>
+
+        <script src="root/controllers/logincontroller.js"></script>
+        <script src="root/controllers/admincontroller.js"></script>
+</head>
+
+<body>
+
+        <div>
+                <toaster-container toaster-options="{'time-out': 4000 ,'animation-class': 'toast-top-center'}"></toaster-container>
+
+                <ui-view>
+
+                </ui-view>
+        </div>
+
+</body>
+<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker();
+        });
+    </script>

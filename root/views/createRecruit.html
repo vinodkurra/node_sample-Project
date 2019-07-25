@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>::AdminDashboard - Fund::</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fund">
+    <meta name="keywords" content="Fund">
+    <meta name="author" content="Fund">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="root/images/logosymbol.png" rel="icon">
+    <link href="root/css/bootstrap.min.css" rel="stylesheet">
+    <link href="root/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="root/css/style.css" rel="stylesheet">
+    <link href="root/css/reset.css" rel="stylesheet">
+    <link href="root/css/responsive.css" rel="stylesheet">
+    <link href="root/css/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="eventInfoBg">
+                <form name='newform' novalidate>
+                    <div class="form-group row">
+                        <label for="staticEmail" class="col-sm-3 col-form-label">Recruitment ID
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" name="inputrecruitmentId" value="" class="form-control" ng-model='user.inputrecruitmentId' required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.inputrecruitmentId.$error.required" class="help-block">Please Enter InputrecruitmentId.</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Primary Skills
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="inputPrimarySkills" ng-model="user.inputPrimarySkills" placeholder="Primary Skills"
+                                required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.inputPrimarySkills.$error.required" class="help-block">Please Enter PrimarySkills.</p>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Secondary Skills
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="inputSecondarySkills" ng-model="user.inputSecondarySkills"  placeholder="Secondary Skills" required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.inputSecondarySkills.$error.required" class="help-block">Please Enter SecondarySkills.</p>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Experience
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="experience" ng-model="user.experience"  placeholder="Experience" required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.experience.$error.required" class="help-block">Please Enter Experience.</p>
+
+                        </div>
+                    </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Revalant Experience
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="number" class="form-control" name="revalantExperience" ng-model="user.revalantExperience"  placeholder="Revalant Experience" required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.revalantExperience.$error.required" class="help-block">Please Enter Revalant Experience.</p>
+                            
+                        </div>
+                    </div>
+                 <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Number of vacancies
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <input type="number" name="vacancies" class="form-control" ng-model="user.vacancies"  placeholder="Number of vacancies" required/>
+                            <p style='color:red' ng-if="newform.$submitted && newform.vacancies.$error.required" class="help-block">Please Enter Vacancies.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Job description
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" name="jobDescription" ng-model="user.jobDescription" aria-label="With textarea" required/></textarea>
+                            <p style='color:red' ng-if="newform.$submitted && newform.jobDescription.$error.required" class="help-block">Please Enter Job Description.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputState" class="col-sm-3 col-form-label">Department
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <select id="inputState" name="department" ng-model="user.department" class="form-control" required>
+                                <option selected>---Select Department---</option>
+                                <option>Computer science and Engineering</option>
+                                <option>Electrical engineering</option>
+                                <option>Civil engineering</option>
+                                <option>information technology</option>
+                                <option>Mechanical engineering</option>
+                            </select>
+                            <p style='color:red' ng-if="newform.$submitted && newform.department.$error.required" class="help-block">Please Select Department.</p>
+                            
+                        </div>
+                    </div>
+                      <div class="form-group row">
+                        <label for="inputState" class="col-sm-3 col-form-label">Qualification
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <select id="inputState" name="qualification" ng-model="user.qualification" class="form-control" required>
+                                <option selected>--- Select Qualification---</option>
+                                <option>B.E </option>
+                                <option>M.E</option>
+                                <option>M.C.A</option>
+                                <option>M.B.A</option>
+                                <option>M.SC</option>
+                                <option>B.sc</option>
+                            </select>
+                            <p style='color:red' ng-if="newform.$submitted && newform.qualification.$error.required" class="help-block">Please Select Qualification.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputState" class="col-sm-3 col-form-label">Reason for Recurit
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <select id="inputState" name="reasonforRecurit" ng-model="user.reasonforRecurit" class="form-control" required>
+                                <option selected>---Select---</option>
+                                <option>Reason for Recurit</option>
+                                <option>------</option>
+                            </select>
+                            <p style='color:red' ng-if="newform.$submitted && newform.reasonforRecurit.$error.required" class="help-block">Please Select Department.</p>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputState" class="col-sm-3 col-form-label">Job Location
+                            <sup>*</sup>
+                        </label>
+                        <div class="col-sm-8">
+                            <select id="inputState" name="location" ng-model="user.location" class="form-control" required>
+                                <option selected>---Choose---</option>
+                                <option>chennai-India</option>
+                                <option>Bangalore-India</option>
+                            </select>
+                            <p style='color:red' ng-if="newform.$submitted && newform.location.$error.required" class="help-block">Please Select Department.</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="button text-center">
+                        <button type="submit" class="btn btn-primary" ng-click='createRecruitform(newform.$valid,user)'>Submit</button>
+                        <button type="button" class="btn btn-primary">Reset</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="root/js/jquery.min.js" type="text/javascript"></script>
+    <script src="root/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="root/js/moment.min.js"></script>
+    <script src="root/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="root/js/jquery.appear.js" type="text/javascript"></script>
+    <script src="root/js/main.js" type="text/javascript"></script>
+    <script src="root/js/jquery.nicescroll.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+            $('#datetimepicker2').datetimepicker();
+        });
+    </script>
+
+</body>
+
+</html>

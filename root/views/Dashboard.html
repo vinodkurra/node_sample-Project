@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>::User List - Fund::</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Fund">
+  <meta name="keywords" content="Fund">
+  <meta name="author" content="Fund">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="root/images/logo.png" />
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbg navbar-nav">
+          <li ui-sref-active="active">
+            <a href="" ui-sref='dashboard.createRecruit'>
+              <i class="far fa-calendar-alt"></i> Create Recruitment</a>
+          </li>
+          <li ui-sref-active="active">
+            <a href="" ui-sref='dashboard'>
+              <i class="fas fa-users"></i> Recruitment List</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="" ng-click='logoutfunction()'>
+              <i class="fas fa-power-off"></i> Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" ui-view>
+    <div class="col-md-12">
+      <div class="eventInfoBg">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Emp Id</th>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  ng-repeat="list in recruitList | pagination : currentPage*itemsPerPage | limitTo: itemsPerPage">
+              <td>{{list.qualification}}</td>
+              <td>{{list.location}}</td>
+              <td>{{list.experience}}</td>
+              <td>{{list.vacancies}}</td>
+              <td>{{list.jobDescription}}</td>
+              <td>
+                <button type="button" class="activeBtn" ui-sref="dashboard.editList({ id: list._id})">Edit</button>
+                <button class="activeDelBtn" ng-click='deleteList(list._id)'>Delete</button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <div class="pagination-div" ng-if='recruitList.length>0'>
+
+          <ul class="pagination">
+            <li ng-class="DisablePrevPage()">
+              <a href ng-click="prevPage()">« Prev</a>
+            </li>
+            <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+              <a href="">{{n+1}}</a>
+            </li>
+            <li ng-class="DisableNextPage()">
+              <a href ng-click="nextPage()">Next »</a>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="root/js/jquery.min.js" type="text/javascript"></script>
+  <script src="root/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="root/js/moment.min.js"></script>
+  <script src="root/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+  <script src="root/js/jquery.appear.js" type="text/javascript"></script>
+  <script src="root/js/main.js" type="text/javascript"></script>
+  <script src="root/js/jquery.nicescroll.min.js"></script>
+
+
+</body>
+
+</html>
